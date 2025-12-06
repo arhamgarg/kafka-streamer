@@ -20,9 +20,12 @@ int main(int argc, char **argv) {
 
   conf = rd_kafka_conf_new();
 
-  set_config(conf, "bootstrap.servers", "<BOOTSTRAP SERVERS>");
-  set_config(conf, "sasl.username", "<CLUSTER API KEY>");
-  set_config(conf, "sasl.password", "<CLUSTER API SECRET>");
+  set_config(conf, "bootstrap.servers",
+             "pkc-619z3.us-east1.gcp.confluent.cloud:9092");
+  set_config(conf, "sasl.username", "FKZ4XO5WBXCYJ3KL");
+  set_config(
+      conf, "sasl.password",
+      "cfltFYtCrVq684k196hchFjPi111P4RvNxe9bAkWOvMYm8kyzuxcSchztE+9JJmQ");
 
   set_config(conf, "security.protocol", "SASL_SSL");
   set_config(conf, "sasl.mechanisms", "PLAIN");
@@ -42,11 +45,10 @@ int main(int argc, char **argv) {
   int message_count = 10;
   const char *topic = "sample_data_stock_trades";
   const char *sides[] = {"BUY", "SELL"};
-  const char *symbols[] = {"AAPL", "GOOG", "TSLA", "AMZN",
-                           "ZBZX", "MSFT", "META", "NVDA"};
-  const char *accounts[] = {"ABC123", "XYZ789", "QWE456", "ACC001"};
-  const char *user_ids[] = {"User_1", "User_2", "User_3", "User_4",
-                            "User_5", "User_6", "User_7", "User_8"};
+  const char *symbols[] = {"AAPL", "AMZN", "GOOG", "META",
+                           "MSFT", "NVDA", "TSLA"};
+  const char *accounts[] = {"ACC01", "ACC02", "ACC03", "ACC04", "ACC05"};
+  const char *user_ids[] = {"user01", "user02", "user03", "user04", "user05"};
 
   for (int i = 0; i < message_count; i++) {
     const char *side = sides[random() % ARR_SIZE(sides)];
