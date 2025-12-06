@@ -74,8 +74,7 @@ int main(int argc, char **argv) {
         return 1;
       }
     } else {
-      g_message("Consumed trade event from topic %s:\n%s",
-                rd_kafka_topic_name(message->rkt), (char *)message->payload);
+      g_message("%s", (char *)message->payload);
     }
 
     rd_kafka_message_destroy(message);

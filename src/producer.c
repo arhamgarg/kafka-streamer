@@ -44,27 +44,20 @@ int main(int argc, char **argv) {
 
   int message_count = 10;
   const char *topic = "sample_data_stock_trades";
-  const char *sides[] = {"BUY", "SELL"};
+  const char *sides[] = {"Buy", "Sell"};
   const char *symbols[] = {"AAPL", "AMZN", "GOOG", "META",
                            "MSFT", "NVDA", "TSLA"};
-  const char *accounts[] = {"ACC01", "ACC02", "ACC03", "ACC04", "ACC05"};
-  const char *user_ids[] = {"user01", "user02", "user03", "user04", "user05"};
 
   for (int i = 0; i < message_count; i++) {
     const char *side = sides[random() % ARR_SIZE(sides)];
     const char *symbol = symbols[random() % ARR_SIZE(symbols)];
-    const char *account = accounts[random() % ARR_SIZE(accounts)];
-    const char *userid = user_ids[random() % ARR_SIZE(user_ids)];
 
     int quantity = (random() % 5000) + 1;
     int price = (random() % 500) + 10;
 
     char message[256];
-    snprintf(message, sizeof(message),
-             "{ \"side\": \"%s\", \"quantity\": %d, \"symbol\": \"%s\", "
-             "\"price\": %d, "
-             "\"account\": \"%s\", \"userid\": \"%s\" }",
-             side, quantity, symbol, price, account, userid);
+    snprintf(message, sizeof(message), "%s %d %s @ %d", side, quantity, symbol,
+             price);
 
     size_t message_len = strlen(message);
 
@@ -78,7 +71,7 @@ int main(int argc, char **argv) {
               rd_kafka_err2str(err));
       return 1;
     } else {
-      g_message("Produced trade event to topic: %s", message);
+      g_message("%s", message);
     }
 
     rd_kafka_poll(producer, 0);
