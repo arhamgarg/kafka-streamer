@@ -25,7 +25,7 @@ int main(int argc, char **argv) {
   set_config(conf, "security.protocol", "SASL_SSL");
   set_config(conf, "sasl.mechanisms", "PLAIN");
   set_config(conf, "group.id", "kafka-tutorial");
-  set_config(conf, "auto.offset.reset", "latest");
+  set_config(conf, "auto.offset.reset", "earliest");
 
   consumer = rd_kafka_new(RD_KAFKA_CONSUMER, conf, errstr, sizeof(errstr));
 
