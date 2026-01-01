@@ -15,12 +15,9 @@ int main(int argc, char **argv) {
 
   conf = rd_kafka_conf_new();
 
-  set_config(conf, "bootstrap.servers",
-             "pkc-619z3.us-east1.gcp.confluent.cloud:9092");
-  set_config(conf, "sasl.username", "FKZ4XO5WBXCYJ3KL");
-  set_config(
-      conf, "sasl.password",
-      "cfltFYtCrVq684k196hchFjPi111P4RvNxe9bAkWOvMYm8kyzuxcSchztE+9JJmQ");
+  set_config(conf, "bootstrap.servers", "<BOOTSTRAP SERVERS>");
+  set_config(conf, "sasl.username", "<CLUSTER API KEY>");
+  set_config(conf, "sasl.password", "<CLUSTER API SECRET>");
 
   set_config(conf, "security.protocol", "SASL_SSL");
   set_config(conf, "sasl.mechanisms", "PLAIN");
