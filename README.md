@@ -18,16 +18,6 @@ Before building and running this project, ensure you have the following installe
 *   `librdkafka`
 *   `GLib`
 
-## Setup Kafka Cluster
-
-This tutorial assumes you have access to a Kafka cluster. You will need the following information:
-
-*   **Bootstrap Servers:** The address of your Kafka broker(s).
-*   **Cluster API Key (SASL Username):** Your username for SASL authentication.
-*   **Cluster API Secret (SASL Password):** Your password for SASL authentication.
-
-Replace the placeholder values (`<BOOTSTRAP SERVERS>`, `<CLUSTER API KEY>`, `<CLUSTER API SECRET>`) in `producer.c` and `consumer.c` with your actual Kafka cluster details.
-
 ## Building the Project
 
 To compile the producer and consumer applications, navigate to the `src/` directory and run `make`:
