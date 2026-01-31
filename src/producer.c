@@ -20,12 +20,8 @@ int main(int argc, char **argv) {
 
   conf = rd_kafka_conf_new();
 
-  set_config(conf, "bootstrap.servers", "<BOOTSTRAP SERVERS>");
-  set_config(conf, "sasl.username", "<CLUSTER API KEY>");
-  set_config(conf, "sasl.password", "<CLUSTER API SECRET>");
-
-  set_config(conf, "security.protocol", "SASL_SSL");
-  set_config(conf, "sasl.mechanisms", "PLAIN");
+  set_config(conf, "bootstrap.servers", "localhost:9092");
+  
   set_config(conf, "acks", "all");
 
   rd_kafka_conf_set_dr_msg_cb(conf, dr_msg_cb);
