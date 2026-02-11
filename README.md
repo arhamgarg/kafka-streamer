@@ -1,6 +1,6 @@
-# Kafka Tutorial with C, librdkafka, and GLib
+# Kafka Streamer
 
-This project provides a tutorial for interacting with Apache Kafka using C, the `librdkafka` library, and `GLib`. It includes a producer application that generates synthetic stock trade data and a consumer application that consumes this data from a Kafka topic.
+This project provides a streamer for interacting with Apache Kafka using C, the `librdkafka` library, and `GLib`. It includes a producer application that generates synthetic stock trade data and a consumer application that consumes this data from a Kafka topic.
 
 ## Features
 
