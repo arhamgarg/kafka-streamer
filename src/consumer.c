@@ -17,7 +17,7 @@ int main(int argc, char **argv) {
 
   set_config(conf, "bootstrap.servers", "localhost:9092");
 
-  set_config(conf, "group.id", "kafka-tutorial");
+  set_config(conf, "group.id", "kafka-streamer");
   set_config(conf, "auto.offset.reset", "earliest");
 
   consumer = rd_kafka_new(RD_KAFKA_CONSUMER, conf, errstr, sizeof(errstr));
@@ -31,7 +31,7 @@ int main(int argc, char **argv) {
 
   conf = NULL;
 
-  const char *topic = "sample_data_stock_trades";
+  const char *topic = "stock_trades";
   rd_kafka_topic_partition_list_t *subscription =
       rd_kafka_topic_partition_list_new(1);
 
