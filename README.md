@@ -38,7 +38,7 @@ First, start the consumer to listen for messages:
 ./consumer
 ```
 
-The consumer will connect to the `sample_data_stock_trades` topic and print any consumed messages to the console. It will continuously wait for messages.
+The consumer will connect to the `stock_trades` topic and print any consumed messages to the console. It will continuously wait for messages.
 
 ### 2. Run the Kafka Producer
 
@@ -48,6 +48,6 @@ In a separate terminal, run the producer to send synthetic stock trade events:
 ./producer
 ```
 
-The producer will generate 10 random stock trade messages and send them to the `sample_data_stock_trades` topic. After sending the messages, the producer will exit.
+The producer will generate 10 random stock trade messages and send them to the `stock_trades` topic. After sending the messages, the producer will exit.
 
 You should see the messages appear in the consumer's terminal.
