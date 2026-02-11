@@ -36,7 +36,7 @@ int main(int argc, char **argv) {
   conf = NULL;
 
   int message_count = 10;
-  const char *topic = "sample_data_stock_trades";
+  const char *topic = "stock_trades";
   const char *sides[] = {"Buy", "Sell"};
   const char *symbols[] = {"AAPL", "AMZN", "GOOG", "META",
                            "MSFT", "NVDA", "TSLA"};
